@@ -20,11 +20,16 @@ const config: Config = {
         90: '#434e58',
         100: '#1d2c37'
       },
+      backgroundImage: {
+        'custom-gradient':
+          'linear-gradient(142.07deg, #ab238f 0.94%, #df3295 34.4%, #fe9d9b 71.35%, #ff7770 100.91%)'
+      },
       colors: {
         main: {
           primary: '#100D22',
           secondary: '#AB238F'
         },
+
         alert: {
           success: '#00C566',
           error: '#FF4747',

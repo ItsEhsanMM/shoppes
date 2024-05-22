@@ -7,7 +7,7 @@ import { HiMenuAlt3 } from 'react-icons/hi'
 import { HeadItems, menuVariants } from '../../../lib/consts'
 import { IoClose } from 'react-icons/io5'
 
-const HamburgerMenu: React.FC = () => {
+const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -15,7 +15,7 @@ const HamburgerMenu: React.FC = () => {
   }
 
   return (
-    <div className='sm:hidden'>
+    <div className='md:hidden'>
       <AnimatePresence>
         {isOpen ? (
           <motion.div
@@ -34,7 +34,7 @@ const HamburgerMenu: React.FC = () => {
             {HeadItems.map((item, index) => (
               <div key={item.name}>
                 <Link href={item.href}>
-                  <p className='capitalize text-additional-white'>
+                  <p className='text-lg font-medium capitalize text-additional-white sm:text-2xl'>
                     {item.name}
                   </p>
                 </Link>
@@ -54,13 +54,32 @@ const HamburgerMenu: React.FC = () => {
     </div>
   )
 }
+
+const Menu = () => {
+  return (
+    <div className=' hidden w-full items-center justify-between md:flex'>
+      <div className='flex w-3/4 justify-evenly px-10'>
+        {HeadItems.map(item => (
+          <Link href={item.href} key={item.name}>
+            <h4 className='text-lg font-normal lg:text-2xl '>{item.name}</h4>
+          </Link>
+        ))}
+      </div>
+      <div>
+        <h4 className='cursor-pointer font-medium underline'>Login</h4>
+      </div>
+    </div>
+  )
+}
+
 const Header = () => {
   return (
-    <div className='my-8 flex w-full items-center justify-between'>
+    <div className='my-8 flex items-center justify-between'>
       <Link href='/'>
-        <h4 className='font-semibold'>shoppes</h4>
+        <h3 className='text-gradient font-extrabold'>shoppes</h3>
       </Link>
-      <HamburgerMenu />
+      <MobileMenu />
+      <Menu />
     </div>
   )
 }

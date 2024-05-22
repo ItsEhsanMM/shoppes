@@ -74,7 +74,6 @@ h5 {
 
 .gradient {
   border: 1px solid;
-
   border-image-source: linear-gradient(
     142.07deg,
     #ab238f 0.94%,
@@ -82,4 +81,24 @@ h5 {
     #fe9d9b 71.35%,
     #ff7770 100.91%
   );
+}
+
+.text-gradient {
+  background: linear-gradient(
+    142.07deg,
+    #ab238f 0.94%,
+    #df3295 34.4%,
+    #fe9d9b 71.35%,
+    #ff7770 100.91%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+  background-position: left;
+}
+
+.text-gradient-hover:hover {
+  background-position: right;
 }
