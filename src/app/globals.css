@@ -2,32 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+  body {
+    @apply font-primary;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .btn {
+    @apply btn bg-main-primary;
+  }
+
+  .btn-sm {
+    @apply h-8 w-28 rounded-2xl px-4 py-1;
+  }
+
+  .btn-md {
+    @apply h-12 w-36 rounded-3xl px-6 py-3;
+  }
+
+  .btn-xl {
+    @apply h-16 w-44 rounded-[32px] px-8 py-5;
+  }
+
+  .btn-neutral {
+    @apply bg-gray-50;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1 {
+  font-weight: 400;
+  font-size: 120px;
+  line-height: 149.44px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h2 {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 62.27px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49.81px;
+}
+
+h4 {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29.89px;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22.68px;
+}
+
+.gradient {
+  border: 1px solid;
+
+  border-image-source: linear-gradient(
+    142.07deg,
+    #ab238f 0.94%,
+    #df3295 34.4%,
+    #fe9d9b 71.35%,
+    #ff7770 100.91%
+  );
 }
