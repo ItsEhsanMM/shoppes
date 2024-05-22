@@ -49,7 +49,7 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: 'item',
+        DEFAULT: '1rem',
         md: '1.5rem',
         lg: '2rem'
       }
